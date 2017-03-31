@@ -7,3 +7,5 @@
 # Add RedHat when needed
 #- include: install_redhat.yml
 #  when: ansible_os_family == 'RedHat'
+
+- include: secure_installation.yml
