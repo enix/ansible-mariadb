@@ -12,7 +12,7 @@
   apt:
     name: "{{ item }}"
     state: present
-  with_items: {{ mariadb__extra_packages }}
+  with_items: "{{ mariadb__extra_packages }}"
 
 - name: "Remove old log files"
   file: "path={{ item }} state=absent"
