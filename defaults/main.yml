@@ -1,2 +1,3 @@
 ---
 # defaults file for $roletemplate
+mariadb__extra_packages=[]

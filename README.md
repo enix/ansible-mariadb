@@ -18,9 +18,9 @@ Supported targets:
 Role Variables
 --------------
 
-This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `mariadb_`.
+This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `mariadb__`.
 
-- `mariadb_` - desc
+- `mariadb__extra_packages` - List of extra packages to install (like plugins, ...), `default: []`.
 
 Dependencies
 ------------
@@ -49,7 +49,7 @@ And add it to your play's roles:
     - hosts: servers
       roles:
         - role: mariadb:
-          mariadb_root_password='secret'
+          mariadb__root_password='secret'
 
 
 You can also use the role as a playbook. Asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
@@ -61,7 +61,7 @@ Still to do
 -----------
 
 - Add support for upstream or default distribution versions
-
+- Add support for automysqlbackup
 
 Changelog
 ---------

@@ -1,2 +1,9 @@
 ---
-# tasks file for $roletemplate
+# tasks file for mariadb
+
+- include: install_debian.yml
+  when: ansible_os_family == 'Debian'
+
+# Add RedHat when needed
+#- include: install_redhat.yml
+#  when: ansible_os_family == 'RedHat'
