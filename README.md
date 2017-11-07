@@ -22,19 +22,12 @@ This roles comes preloaded with almost every available default. You can override
 
 - `mariadb__extra_packages` - List of extra packages to install (like plugins, ...), `default: []`.
 - `mariadb__root_password` - Set the root user password, `default: undefined`.
+- `mariadb__default_characterset` - Change the character set of the server installation. By default this is utf8mb4 upon package installation. `default: undefined`.
 
 Dependencies
 ------------
 
 - None
-
-Extra
------
-
-Callable tasks:
-
-- `task`: ...
-
 
 Usage
 -----

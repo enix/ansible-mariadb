@@ -9,3 +9,5 @@
 #  when: ansible_os_family == 'RedHat'
 
 - include: secure_installation.yml
+
+- include: change_characterset.yml

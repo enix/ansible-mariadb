@@ -1,0 +1,18 @@
+---
+
+# FIXME to be patched to support more generic configuration
+- name: "Configure default Character Set"
+  lineinfile:
+    dest: "{{ item.file }}"
+    regexp: '^{{ item.key }}'
+    line: '{{ item.key }}\t = {{ item.value }}'
+    backrefs: yes
+    backup: yes
+    state: present
+  with_items:
+    - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "character-set-server", value: "{{ mariadb__default_characterset }}"}
+    - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "collation-server", value: "{{ mariadb__default_characterset }}_general_ci"}
+    - { file: "/etc/mysql/mariadb.conf.d/50-mysql-clients.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
+    - { file: "/etc/mysql/mariadb.conf.d/50-client.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
+  when: mariadb__default_characterset is defined
+  notify: "restart mariadb"

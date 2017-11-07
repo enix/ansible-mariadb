@@ -1,3 +1,4 @@
 ---
 # defaults file for $roletemplate
 mariadb__extra_packages: []
+#mariadb__default_characterset: 

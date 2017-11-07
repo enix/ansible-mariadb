@@ -4,3 +4,4 @@
 #    - role-template # official one
     - role: '../../.'    # work using vagrant tests
       mariadb__root_password: 'secret'
+      mariadb__default_characterset: "latin1"
