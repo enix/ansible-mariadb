@@ -21,6 +21,7 @@ Role Variables
 This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `mariadb__`.
 
 - `mariadb__extra_packages` - List of extra packages to install (like plugins, ...), `default: []`.
+- `mariadb__root_password` - Set the root user password, `default: undefined`.
 
 Dependencies
 ------------
