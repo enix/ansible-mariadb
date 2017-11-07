@@ -39,9 +39,9 @@ debian-stretch:
   image: ansiblecheck/ansiblecheck:debian-stretch
   <<: *ansible_test
 
-ubuntu-trusty:
-  image: ansiblecheck/ansiblecheck:ubuntu-trusty
-  <<: *ansible_test
+# ubuntu-trusty:
+#   image: ansiblecheck/ansiblecheck:ubuntu-trusty
+#   <<: *ansible_test
 
 ubuntu-xenial:
   image: ansiblecheck/ansiblecheck:ubuntu-xenial
