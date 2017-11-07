@@ -1,7 +1,7 @@
 ---
 # handlers file for $roletemplate
 
- - name: restart $service
+ - name: restart mariadb
    service: name=mysql state=restarted
 
 # - name: reload $service
