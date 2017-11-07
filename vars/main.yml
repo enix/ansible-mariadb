@@ -1,2 +1,7 @@
 ---
 # vars file for roletemplate
+mariadb__characterset_config:
+ - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "character-set-server", value: "{{ mariadb__default_characterset }}"}
+ - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "collation-server", value: "{{ mariadb__default_characterset }}_general_ci"}
+ - { file: "/etc/mysql/mariadb.conf.d/50-mysql-clients.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
+ - { file: "/etc/mysql/mariadb.conf.d/50-client.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}

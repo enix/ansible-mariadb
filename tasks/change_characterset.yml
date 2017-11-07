@@ -1,18 +1,24 @@
 ---
 
 # FIXME to be patched to support more generic configuration
+- name: "Ovveride Character Set configuration for Debian Jessie"
+  set_fact:
+    mariadb__characterset_config:
+    - { file: "/etc/mysql/conf.d/mariadb.cnf", key: "character-set-server", value: "{{ mariadb__default_characterset }}"}
+    - { file: "/etc/mysql/conf.d/mariadb.cnf", key: "collation-server", value: "{{ mariadb__default_characterset }}_general_ci"}
+    - { file: "/etc/mysql/conf.d/mariadb.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
+  when: mariadb__default_characterset is defined and "{{ ansible_distribution_release }}" == "jessie"
+
+
 - name: "Configure default Character Set"
   lineinfile:
     dest: "{{ item.file }}"
-    regexp: '^{{ item.key }}'
+    regexp: '^#*{{ item.key }}'
     line: '{{ item.key }}\t = {{ item.value }}'
     backrefs: yes
     backup: yes
     state: present
   with_items:
-    - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "character-set-server", value: "{{ mariadb__default_characterset }}"}
-    - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", key: "collation-server", value: "{{ mariadb__default_characterset }}_general_ci"}
-    - { file: "/etc/mysql/mariadb.conf.d/50-mysql-clients.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
-    - { file: "/etc/mysql/mariadb.conf.d/50-client.cnf", key: "default-character-set", value: "{{ mariadb__default_characterset }}"}
+    - "{{ mariadb__characterset_config }}"
   when: mariadb__default_characterset is defined
   notify: "restart mariadb"
