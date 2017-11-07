@@ -64,6 +64,11 @@ Still to do
 Changelog
 ---------
 
+### 1.1
+
+Fix character set for Debian Jessie
+Force update_cache for package installation
+
 ### 1.0
 
 Initial version.
