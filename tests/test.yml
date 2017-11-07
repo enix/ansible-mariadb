@@ -1,9 +1,5 @@
 ---
 - hosts: test
-  tasks:
-    - apt:
-      update_cache: yes
-
   roles:
 #    - role-template # official one
     - role: '../../.'    # work using vagrant tests
