@@ -63,6 +63,8 @@ Still to do
 
 - Add support for upstream or default distribution versions
 - Add support for automysqlbackup
+- Add support for basic network options (listen, port)
+- Add support for extra configuration options (ex eNiXHosting.logstash, option list block)
 
 Changelog
 ---------
