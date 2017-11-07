@@ -8,6 +8,11 @@
 #- include: install_redhat.yml
 #  when: ansible_os_family == 'RedHat'
 
+# Needed in some case where the daemon is not automatically
+# startup at installation
+- name: "Force service start"
+  service: name=mysql state=started
+
 - include: secure_installation.yml
 
 - include: change_characterset.yml
