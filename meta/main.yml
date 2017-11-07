@@ -1,21 +1,10 @@
 galaxy_info:
   author: Laurent CORBES
-  description: Ansible role to install and manage mariadb SQL
+  description: Ansible role to deploy mariadb SQL Server
   company: Enix Hosting (http://www.enix.fr)
-  # If the issue tracker for your role is not on github, uncomment the
-  # next line and provide a value
-  # issue_tracker_url: http://example.com/issue/tracker
-
-  # Some suggested licenses:
-  # - BSD (default)
-  # - MIT
-  # - GPLv2
-  # - GPLv3
-  # - Apache
-  # - CC-BY
   license: license GPLv2
 
-  min_ansible_version: 1.2
+  min_ansible_version: 2.0
 
   # Optionally specify the branch Galaxy will use when accessing the GitHub
   # repo for this role. During role install, if no tags are available,
@@ -206,14 +195,9 @@ galaxy_info:
   #  - all
   #  - Any
 
-  galaxy_tags: []
-    # List tags for your role here, one per line. A tag is
-    # a keyword that describes and categorizes the role.
-    # Users find roles by searching for tags. Be sure to
-    # remove the '[]' above if you add tags to this list.
-    #
-    # NOTE: A tag is limited to a single word comprised of
-    # alphanumeric characters. Maximum 20 tags per role.
+  galaxy_tags:
+    - MariaDB
+    - database
 
 dependencies: []
   # List your role dependencies here, one per line.

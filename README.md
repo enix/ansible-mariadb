@@ -1,4 +1,4 @@
-Enix/mariadb for Ansible
+eNiXHosting.mariadb
 =================
 
 A role for deploying and configuring [mariadb](http://mariadb.org) on unix hosts using [Ansible](http://www.ansible.com/).
@@ -12,7 +12,6 @@ Supported targets:
 - Ubuntu 16.04 "Xenial"
 - Debian 8 "Jessie"
 - Debian 9 "Stretch"
-- ...
 
 
 Role Variables
@@ -38,11 +37,14 @@ Clone this repo into your roles directory:
 
 Or use Ansible galaxy requirements.yml
 
+    - src: eNiXHosting.$ROLE
+
+
 And add it to your play's roles:
 
     - hosts: servers
       roles:
-        - role: mariadb:
+        - role: eNiXHosting.mariadb:
           mariadb__root_password='secret'
 
 
@@ -62,14 +64,14 @@ Still to do
 Changelog
 ---------
 
-### 0.1
+### 1.0
 
 Initial version.
 
 License
 -------
 
-GPL
+GPLv2
 
 Author Information
 ------------------
